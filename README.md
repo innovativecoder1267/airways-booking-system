@@ -6,7 +6,7 @@ It handles user authentication, flight booking, and API endpoints for the fronte
 
 ---
 
-## 🚀 Features
+ Features
 - User authentication (Register/Login/Logout)
 - Flight booking APIs
 - Secure password storage with bcrypt
@@ -15,7 +15,7 @@ It handles user authentication, flight booking, and API endpoints for the fronte
 
 ---
 
-## 🛠️ Tech Stack
+ Tech Stack
 - Node.js
 - Express.js
 - MongoDB with Mongoose
@@ -24,7 +24,7 @@ It handles user authentication, flight booking, and API endpoints for the fronte
 
 ---
 
-## ⚙️ Installation
+ Installation
 
 1. Clone the repository:
    ```bash
@@ -53,12 +53,19 @@ The server will run on http://localhost:5000.
 
 📡 API Endpoints
 
-POST /customer/register → Register a new user
 
-POST /customer/login → Login user
+ Authentication
+- **POST** `/register` → Register a new user  
+- **POST** `/login` → Login user  
+- **POST** `/logout` → Logout user (JWT required)  
 
-POST /customer/logout → Logout user
+ Flights
+- **GET** `/flights` → Search available flights  
 
-POST /booking/create → Book a flight
+ Payments
+- **POST** `/initiate` → Start payment process  
+- **POST** `/paymentverify` → Verify payment signature  
+- **POST** `/SaveInDb` → Save successful booking in database (JWT required)  
 
-GET /booking/:id → Get booking details
+ Bookings
+- **GET** `/Getdata` → Fetch all bookings for the logged-in user (JWT required)  
